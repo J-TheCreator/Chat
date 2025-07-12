@@ -1,5 +1,3 @@
-import { initializeApp } from "firebase/app";
-
 
 export const firebaseConfig = {
   apiKey: "AIzaSyAf0G2HZctA0IdAArCLCOswopRib0HlnpU",
@@ -19,5 +17,3 @@ export interface UserInfo {
   readonly photoURL: string | null;
   readonly providerId: string;
 }
-
-const app = initializeApp(firebaseConfig);

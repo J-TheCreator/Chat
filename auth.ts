@@ -1,11 +1,12 @@
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, browserLocalPersistence, setPersistence } from "firebase/auth";
 import { getFirestore, doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { firebaseConfig } from "./src/firebase";
 import { initializeApp } from "firebase/app";
 
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
+await setPersistence(auth, browserLocalPersistence);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
 
