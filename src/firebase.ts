@@ -1,12 +1,12 @@
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyAf0G2HZctA0IdAArCLCOswopRib0HlnpU",
-  authDomain: "communitychat-13929.firebaseapp.com",
-  projectId: "communitychat-13929",
-  storageBucket: "communitychat-13929.firebasestorage.app",
-  messagingSenderId: "477685201996",
-  appId: "1:477685201996:web:77e1f027d7233df6b7c8e9",
-  measurementId: "G-XF491D2VQK"
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: "",
+  measurementId: ""
 };
 
 export interface UserInfo {
