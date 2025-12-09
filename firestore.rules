@@ -2,8 +2,12 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }
+
+//Esse arquivo é uma demonstração para liberar acesso para todos, no entanto deve ser aplicado no console do Firebase
+//Regras apenas para teste
+//https://firebase.google.com/docs/storage/security accese a documentação para mais informações
