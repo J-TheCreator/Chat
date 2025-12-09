@@ -6,9 +6,13 @@ import { initializeApp } from "firebase/app";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-await setPersistence(auth, browserLocalPersistence);
 const db = getFirestore(app);
 const provider = new GoogleAuthProvider();
+
+// Configurar persistência de forma síncrona (sem await no top-level)
+setPersistence(auth, browserLocalPersistence).catch((err) => {
+  console.warn("Erro ao configurar persistência:", err);
+});
 
 
 export async function createAccount(email: string, password: string) {
